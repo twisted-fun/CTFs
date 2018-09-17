@@ -1,3 +1,7 @@
+'''
+Null byte overflow to get RCE. Probably the unintended solution and an overkill.
+'''
+
 from pwn import *
 import re
 
